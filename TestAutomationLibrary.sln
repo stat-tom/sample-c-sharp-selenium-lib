@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAutomationLibrary", "TestAutomationLibrary\TestAutomationLibrary.csproj", "{0FB70167-C45E-4F30-9DC1-F3945ED94CE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAutomationLibrary.Selenium", "TestAutomationLibrary.Selenium\TestAutomationLibrary.Selenium.csproj", "{6FDF8FE1-C4E7-43D0-9758-63F82C4A31C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeStore.TestCases", "FakeStore.TestCases\FakeStore.TestCases.csproj", "{FBDAB290-FFE0-492D-8A4C-0FB5B322552E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeStore.WebPages", "FakeStore.WebPages\FakeStore.WebPages.csproj", "{5E347412-0FDA-423F-89E3-EFD26AF5D607}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{0FB70167-C45E-4F30-9DC1-F3945ED94CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FB70167-C45E-4F30-9DC1-F3945ED94CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FB70167-C45E-4F30-9DC1-F3945ED94CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FDF8FE1-C4E7-43D0-9758-63F82C4A31C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FDF8FE1-C4E7-43D0-9758-63F82C4A31C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FDF8FE1-C4E7-43D0-9758-63F82C4A31C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FDF8FE1-C4E7-43D0-9758-63F82C4A31C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBDAB290-FFE0-492D-8A4C-0FB5B322552E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDAB290-FFE0-492D-8A4C-0FB5B322552E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDAB290-FFE0-492D-8A4C-0FB5B322552E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDAB290-FFE0-492D-8A4C-0FB5B322552E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E347412-0FDA-423F-89E3-EFD26AF5D607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E347412-0FDA-423F-89E3-EFD26AF5D607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E347412-0FDA-423F-89E3-EFD26AF5D607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E347412-0FDA-423F-89E3-EFD26AF5D607}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
