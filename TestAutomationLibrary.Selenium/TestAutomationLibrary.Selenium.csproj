@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="92.0.4515.4300" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestAutomationLibrary\TestAutomationLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
