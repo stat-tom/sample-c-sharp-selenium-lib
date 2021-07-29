@@ -11,7 +11,7 @@ namespace TestAutomationLibrary.Selenium
 
         public static void Init()
         {
-            driver = new ChromeDriver(@"C:\Users\stattom\source\repos\TestAutomationLibrary\TestAutomationLibrary.Selenium\Resources\");
+            driver = new ChromeDriver();
         }
 
         public static void Cleanup()

@@ -8,4 +8,8 @@
     <Folder Include="FakeStore\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TestAutomationLibrary\TestAutomationLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
