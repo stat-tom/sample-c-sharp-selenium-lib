@@ -1,7 +1,7 @@
 # TestAutomationLibrary
 
 :dart: Welcome to the Test Automation Library!
-The application allows you to write automated tests for any website. It contains exemplary test cases. The only thing you need to have is page url and web elements' locators. I am using CSS Selectors the most often.
+The application allows you to write automated tests for any website. It contains exemplary test cases. All you need to start testing is your page url and web elements' locators.
 
 :gem: Technologies used and concepts covered
 
