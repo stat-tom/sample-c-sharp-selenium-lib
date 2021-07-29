@@ -19,3 +19,7 @@ The application allows you to write automated tests for any website. It contains
 
 :gem: Licensing
 * All content is licensed under MIT license.
+
+:gem: Project Structure
+
+![alt text](https://github.com/stat-tom/TestAutomationLibrary/blob/main/ProjectStructure.jpg)
