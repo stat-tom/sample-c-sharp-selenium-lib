@@ -1,38 +1,19 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace TestAutomationLibrary.Selenium
 {
-    public class Browser
+    public class Browser : IBrowser
     {
-        public Browser() { }
+        private readonly IWebDriver webDriver;
 
-        public static IWebDriver driver;
-
-        public static void Init()
+        public Browser(IWebDriver webDriver)
         {
-            driver = new ChromeDriver();
+            this.webDriver = webDriver;
         }
 
-        public void CloseNotice()
+        public void GoToUrl(string url)
         {
-            driver.FindElement(By.ClassName("woocommerce-store-notice__dismiss-link")).Click();
-        }
-
-        private IWebElement FindUsernameInputField => driver.FindElement(By.CssSelector("input#username"));
-
-        private IWebElement FindPasswordInputField => driver.FindElement(By.CssSelector("input#password"));
-
-        public void Login(string username, string password)
-        {
-            FindUsernameInputField.SendKeys(username);
-            FindPasswordInputField.SendKeys(password);
-            driver.FindElement(By.CssSelector("button[name='login']")).Click();
-        }
-
-        public static void Cleanup()
-        {
-            driver.Quit();
+            webDriver.Navigate().GoToUrl(url);
         }
     }
 }

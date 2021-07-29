@@ -10,7 +10,7 @@ namespace TestAutomationLibrary.Tests
         [SetUp]
         public void Init()
         {
-            Browser.Init();
+            //Browser.Init();
         }
         
 
@@ -29,7 +29,7 @@ namespace TestAutomationLibrary.Tests
         [TearDown]
         public void Cleanup()
         {
-            Browser.Cleanup();
+            //Browser.Cleanup();
         }
     }
 }
