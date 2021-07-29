@@ -15,4 +15,10 @@
     <ProjectReference Include="..\TestAutomationLibrary.Selenium\TestAutomationLibrary.Selenium.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="chromedriver.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
