@@ -14,7 +14,7 @@ The application allows you to write automated tests for any website. It contains
 * Fork this repo.
 * Clone your new repo.
 * Check your Chrome browser version.
-* Download Chrome Driver version accordingly: https://chromedriver.chromium.org/home and paste it to :\TestAutomationLibrary.Test\bin\Debug\net5.0 .
+* Download Chrome Driver version accordingly: https://chromedriver.chromium.org/home and paste it to "TestAutomationLibrary.Test" folder.
 * Use TC_Template.cs to write your first test.
 
 :gem: Licensing
