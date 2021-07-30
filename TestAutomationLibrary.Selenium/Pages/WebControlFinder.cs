@@ -15,6 +15,22 @@ namespace TestAutomationLibrary.Selenium.Pages
             this.webDriver = webDriver;
         }
 
+        public IButton FindButton(string name)
+        {
+            var webElement = webDriver.FindElement(By.Name(name));
+            //to do check if it is text input; throw exception if null
+
+            return new Button(webElement);
+        }
+
+        public IParagraph FindParagraph(string cssSelector)
+        {
+            var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
+            //to do check if it is text input; throw exception if null
+
+            return new Paragraph(webElement);
+        }
+
         public ITextInput FindTextInput(string id)
         {
             var webElement = webDriver.FindElement(By.Id(id));

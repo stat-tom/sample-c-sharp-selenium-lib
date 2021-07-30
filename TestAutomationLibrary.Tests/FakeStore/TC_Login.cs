@@ -13,17 +13,20 @@ namespace TestAutomationLibrary.Tests.FakeStore
     {
         private IWebDriver webDriver;
         private IBrowser browser;
+        private LoginPage loginPage;
 
         [SetUp]
         public void Init()
         {
             webDriver = new ChromeDriver();
             browser = new Browser(webDriver);
+            loginPage = new LoginPage(webDriver);
         }
 
         [TearDown]
         public void Cleanup()
         {
+            loginPage = null;
             browser = null;
             webDriver.Quit();
         }
@@ -33,9 +36,12 @@ namespace TestAutomationLibrary.Tests.FakeStore
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
 
-            LoginPage loginPage = new LoginPage();
             loginPage.Login("siwec27155", "Abcde1234!@#$");
-            
+
+            var userInfo = loginPage.GetUserInfo();
+            string expectedUserInfo = "Witaj siwec27155 (nie jesteś siwec27155? Wyloguj się)";
+
+            Assert.AreEqual(expectedUserInfo, userInfo, "User infor is not the same.");
         }
 
         
