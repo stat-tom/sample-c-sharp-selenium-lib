@@ -9,5 +9,7 @@ namespace TestAutomationLibrary.Pages
         IButton FindButton(string name);
 
         IParagraph FindParagraph(string cssSelector);
+
+        ILink FindLink(string className);
     }
 }

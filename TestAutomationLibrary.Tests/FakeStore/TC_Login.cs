@@ -37,6 +37,7 @@ namespace TestAutomationLibrary.Tests.FakeStore
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
 
             loginPage.Login("siwec27155", "Abcde1234!@#$");
+            loginPage.DismissLink();
 
             var userInfo = loginPage.GetUserInfo();
             string expectedUserInfo = "Witaj siwec27155 (nie jesteś siwec27155? Wyloguj się)";

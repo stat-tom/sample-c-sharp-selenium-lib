@@ -31,5 +31,11 @@ namespace TestAutomationLibrary.Pages.FakeStore
             var userInfoParagraph = webControlFinder.FindParagraph("div.woocommerce-MyAccount-content>p:first-of-type");
             return userInfoParagraph.Text;
         }
+
+        public void DismissLink()
+        {
+            var dismissLink = webControlFinder.FindLink("woocommerce-store-notice__dismiss-link");
+            dismissLink.Click();
+        }
     }
 }
