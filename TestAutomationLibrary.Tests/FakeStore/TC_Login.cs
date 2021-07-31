@@ -58,5 +58,33 @@ namespace TestAutomationLibrary.Tests.FakeStore
 
             Assert.AreEqual(expectedLoginErrorMessage, loginErrorMessage, "Error message is not correct.");
         }
+
+        [Test]
+        public void FailedLoginNoPassword()
+        {
+            browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
+
+            loginPage.Login("siwec27155", "");
+            loginPage.DismissLink();
+
+            var loginErrorMessage = loginPage.GetLoginErrorMessage();
+            string expectedLoginErrorMessage = "Błąd: Hasło jest puste.";
+
+            Assert.AreEqual(expectedLoginErrorMessage, loginErrorMessage, "Error message is not correct.");
+        }
+
+        [Test]
+        public void FailedLoginNoUsernameAndPassword()
+        {
+            browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
+
+            loginPage.Login("", "");
+            loginPage.DismissLink();
+
+            var loginErrorMessage = loginPage.GetLoginErrorMessage();
+            string expectedLoginErrorMessage = "Błąd: Nazwa użytkownika jest wymagana.";
+
+            Assert.AreEqual(expectedLoginErrorMessage, loginErrorMessage, "Error message is not correct.");
+        }
     }
 }
