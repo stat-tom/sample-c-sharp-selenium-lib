@@ -11,5 +11,7 @@ namespace TestAutomationLibrary.Pages
         IParagraph FindParagraph(string cssSelector);
 
         ILink FindLink(string className);
+
+        IListElement FindListElement(string cssSelector);
     }
 }

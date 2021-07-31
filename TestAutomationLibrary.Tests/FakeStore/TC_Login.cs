@@ -42,9 +42,21 @@ namespace TestAutomationLibrary.Tests.FakeStore
             var userInfo = loginPage.GetUserInfo();
             string expectedUserInfo = "Witaj siwec27155 (nie jesteś siwec27155? Wyloguj się)";
 
-            Assert.AreEqual(expectedUserInfo, userInfo, "User infor is not the same.");
+            Assert.AreEqual(expectedUserInfo, userInfo, "User info is not correct.");
         }
 
-        
+        [Test]
+        public void FailedLoginNoUsername()
+        {
+            browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
+
+            loginPage.Login("", "Abcde1234!@#$");
+            loginPage.DismissLink();
+
+            var loginErrorMessage = loginPage.GetLoginErrorMessage();
+            string expectedLoginErrorMessage = "Błąd: Nazwa użytkownika jest wymagana.";
+
+            Assert.AreEqual(expectedLoginErrorMessage, loginErrorMessage, "Error message is not correct.");
+        }
     }
 }

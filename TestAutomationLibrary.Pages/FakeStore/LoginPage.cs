@@ -37,5 +37,11 @@ namespace TestAutomationLibrary.Pages.FakeStore
             var dismissLink = webControlFinder.FindLink("woocommerce-store-notice__dismiss-link");
             dismissLink.Click();
         }
+
+        public string GetLoginErrorMessage()
+        {
+            var loginErrorMessage = webControlFinder.FindListElement("ul.woocommerce-error");
+            return loginErrorMessage.Text;
+        }
     }
 }

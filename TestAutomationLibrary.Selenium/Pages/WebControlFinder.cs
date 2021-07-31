@@ -31,6 +31,14 @@ namespace TestAutomationLibrary.Selenium.Pages
             return new Link(webElement);
         }
 
+        public IListElement FindListElement(string cssSelector)
+        {
+            var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
+            //to do check if it is text input; throw exception if null
+
+            return new ListElement(webElement);
+        }
+
         public IParagraph FindParagraph(string cssSelector)
         {
             var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
