@@ -1,6 +1,6 @@
 ﻿namespace TestAutomationLibrary.Controls
 {
-    public interface IListElement : IWebControl
+    public interface IListItem : IWebControl
     {
         string Text { get; }
     }

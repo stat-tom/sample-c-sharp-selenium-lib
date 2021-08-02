@@ -1,8 +1,11 @@
-﻿using TestAutomationLibrary.Pages;
+﻿using System.Linq;
+
+using TestAutomationLibrary.Pages;
 using TestAutomationLibrary.Controls;
 using TestAutomationLibrary.Selenium.Controls;
 
 using OpenQA.Selenium;
+using System.Collections.Generic;
 
 namespace TestAutomationLibrary.Selenium.Pages
 {
@@ -31,14 +34,6 @@ namespace TestAutomationLibrary.Selenium.Pages
             return new Link(webElement);
         }
 
-        public IListElement FindListElement(string cssSelector)
-        {
-            var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
-            //to do check if it is text input; throw exception if null
-
-            return new ListElement(webElement);
-        }
-
         public IParagraph FindParagraph(string cssSelector)
         {
             var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
@@ -53,6 +48,21 @@ namespace TestAutomationLibrary.Selenium.Pages
             //to do check if it is text input; throw exception if null
 
             return new TextInput(webElement);
+        }
+
+        public IUnorderedList FindUnorderedList(string cssSelector)
+        {
+            var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
+            //to do check if it is text input; throw exception if null
+
+            var items = webElement.FindElements(By.TagName("li"));
+            var unorderedList = new UnorderedList(webElement);
+            var listItems = items.Select(item => new ListItem(item)).ToList();
+            foreach(var listItem in listItems)
+            {
+                unorderedList.Items.Add(listItem);
+            }
+            return unorderedList;
         }
     }
 }

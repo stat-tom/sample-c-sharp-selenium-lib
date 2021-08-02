@@ -1,7 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using System.Linq;
+
 using TestAutomationLibrary.Controls;
 using TestAutomationLibrary.Pages;
 using TestAutomationLibrary.Selenium.Pages;
+
+using OpenQA.Selenium;
 
 namespace TestAutomationLibrary.Pages.FakeStore
 {
@@ -40,8 +43,9 @@ namespace TestAutomationLibrary.Pages.FakeStore
 
         public string GetLoginErrorMessage()
         {
-            var loginErrorMessage = webControlFinder.FindListElement("ul.woocommerce-error");
-            return loginErrorMessage.Text;
+            var list = webControlFinder.FindUnorderedList("ul.woocommerce-error");
+
+            return list.Items.First().Text;
         }
     }
 }

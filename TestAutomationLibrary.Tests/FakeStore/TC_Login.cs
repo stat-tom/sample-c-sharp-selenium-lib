@@ -35,10 +35,9 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void SuccessfulLogin()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
-
-            loginPage.Login("siwec27155", "Abcde1234!@#$");
             loginPage.DismissLink();
-
+            loginPage.Login("siwec27155", "Abcde1234!@#$");
+            
             var userInfo = loginPage.GetUserInfo();
             string expectedUserInfo = "Witaj siwec27155 (nie jesteś siwec27155? Wyloguj się)";
 
@@ -49,9 +48,8 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void FailedLoginNoUsername()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
-
-            loginPage.Login("", "Abcde1234!@#$");
             loginPage.DismissLink();
+            loginPage.Login("", "Abcde1234!@#$");
 
             var loginErrorMessage = loginPage.GetLoginErrorMessage();
             string expectedLoginErrorMessage = "Błąd: Nazwa użytkownika jest wymagana.";
@@ -63,9 +61,9 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void FailedLoginNoPassword()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
+            loginPage.DismissLink();
 
             loginPage.Login("siwec27155", "");
-            loginPage.DismissLink();
 
             var loginErrorMessage = loginPage.GetLoginErrorMessage();
             string expectedLoginErrorMessage = "Błąd: Hasło jest puste.";
@@ -77,10 +75,10 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void FailedLoginNoUsernameAndPassword()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
-
-            loginPage.Login("", "");
             loginPage.DismissLink();
 
+            loginPage.Login("", "");
+            
             var loginErrorMessage = loginPage.GetLoginErrorMessage();
             string expectedLoginErrorMessage = "Błąd: Nazwa użytkownika jest wymagana.";
 

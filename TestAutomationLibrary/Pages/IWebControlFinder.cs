@@ -12,6 +12,6 @@ namespace TestAutomationLibrary.Pages
 
         ILink FindLink(string className);
 
-        IListElement FindListElement(string cssSelector);
+        IUnorderedList FindUnorderedList(string cssSelector);
     }
 }
