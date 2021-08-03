@@ -4,14 +4,14 @@ namespace TestAutomationLibrary.ContextFeatures
 {
     public interface IControlFinder
     {
-        ITextField FindTextInput(string id);
+        ITextField FindTextInput(string arg);
 
-        IButton FindButton(string name);
+        IButton FindButton(string arg);
 
-        IParagraph FindParagraph(string cssSelector);
+        IParagraph FindParagraph(string arg);
 
-        ILink FindLink(string className);
+        ILink FindLink(string arg);
 
-        IUnorderedList FindUnorderedList(string cssSelector);
+        IUnorderedList FindUnorderedList(string arg);
     }
 }
