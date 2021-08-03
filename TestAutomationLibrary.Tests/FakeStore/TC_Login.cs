@@ -1,25 +1,23 @@
-﻿using TestAutomationLibrary.Selenium;
-using TestAutomationLibrary.Pages.FakeStore;
+﻿using TestAutomationLibrary.Pages.FakeStore;
+using TestAutomationLibrary.Selenium.Browsers;
 
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace TestAutomationLibrary.Tests.FakeStore
 {
     [TestFixture]
     public class TC_Login
     {
-        private IWebDriver webDriver;
-        private IBrowser browser;
+        private IContext context;
+        private Browser browser;
         private LoginPage loginPage;
 
         [SetUp]
         public void Init()
         {
-            webDriver = new ChromeDriver();
-            browser = new Browser(webDriver);
-            loginPage = new LoginPage(webDriver);
+            context = new ChromeContext();
+            browser = new Browser(context);
+            loginPage = new LoginPage(context);
         }
 
         [TearDown]
@@ -27,7 +25,7 @@ namespace TestAutomationLibrary.Tests.FakeStore
         {
             loginPage = null;
             browser = null;
-            webDriver.Quit();
+            context.Quit();
         }
 
         [Test]

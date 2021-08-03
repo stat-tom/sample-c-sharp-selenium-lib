@@ -1,10 +1,10 @@
 ﻿using TestAutomationLibrary.Controls;
 
-namespace TestAutomationLibrary.Pages
+namespace TestAutomationLibrary.ContextFeatures
 {
-    public interface IWebControlFinder
+    public interface IControlFinder
     {
-        ITextInput FindTextInput(string id);
+        ITextField FindTextInput(string id);
 
         IButton FindButton(string name);
 

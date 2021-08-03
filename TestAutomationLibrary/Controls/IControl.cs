@@ -1,6 +1,6 @@
 ﻿namespace TestAutomationLibrary.Controls
 {
-    public interface IWebControl
+    public interface IControl
     {
 
     }

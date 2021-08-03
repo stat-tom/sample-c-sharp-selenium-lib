@@ -4,11 +4,11 @@ using OpenQA.Selenium;
 
 namespace TestAutomationLibrary.Selenium.Controls
 {
-    public class TextInput : ITextInput
+    public class TextField : ITextField
     {
         private readonly IWebElement webElement;
 
-        public TextInput(IWebElement webElement)
+        public TextField(IWebElement webElement)
         {
             this.webElement = webElement;
         }

@@ -1,12 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using TestAutomationLibrary.ContextFeatures;
 
-namespace TestAutomationLibrary.Selenium
+using OpenQA.Selenium;
+
+namespace TestAutomationLibrary.Selenium.ContextFeatures
 {
-    public class Browser : IBrowser
+    public class UrlNavigator : IUrlNavigator
     {
         private readonly IWebDriver webDriver;
 
-        public Browser(IWebDriver webDriver)
+        public UrlNavigator(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
         }

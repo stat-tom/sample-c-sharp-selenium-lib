@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestAutomationLibrary.Selenium\TestAutomationLibrary.Selenium.csproj" />
     <ProjectReference Include="..\TestAutomationLibrary\TestAutomationLibrary.csproj" />
   </ItemGroup>
 

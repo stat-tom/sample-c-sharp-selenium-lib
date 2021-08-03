@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\TestAutomationLibrary.Pages\TestAutomationLibrary.Pages.csproj" />
     <ProjectReference Include="..\TestAutomationLibrary.Selenium\TestAutomationLibrary.Selenium.csproj" />
-    <ProjectReference Include="..\TestAutomationLibrary\TestAutomationLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

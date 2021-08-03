@@ -1,6 +1,6 @@
 ﻿namespace TestAutomationLibrary.Controls
 {
-    public interface ITextInput : IWebControl
+    public interface ITextField : IControl
     {
         void InsertText(string text);
     }

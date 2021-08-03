@@ -1,6 +1,6 @@
 ﻿namespace TestAutomationLibrary.Controls
 {
-    public interface IParagraph : IWebControl
+    public interface IParagraph : IControl
     {
         string Text { get; }
     }

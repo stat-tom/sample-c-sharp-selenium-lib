@@ -2,7 +2,7 @@
 
 namespace TestAutomationLibrary.Controls
 {
-    public interface IUnorderedList : IWebControl
+    public interface IUnorderedList : IControl
     {
         List<IListItem> Items { get; set;}
     }

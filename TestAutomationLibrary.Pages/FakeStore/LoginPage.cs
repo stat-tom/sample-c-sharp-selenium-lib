@@ -1,49 +1,45 @@
 ﻿using System.Linq;
 
-using TestAutomationLibrary.Controls;
-using TestAutomationLibrary.Pages;
-using TestAutomationLibrary.Selenium.Pages;
-
-using OpenQA.Selenium;
+using TestAutomationLibrary.ContextFeatures;
 
 namespace TestAutomationLibrary.Pages.FakeStore
 {
     public class LoginPage
     {
-        private readonly IWebControlFinder webControlFinder;
+        private readonly IControlFinder controlFinder;
 
-        public LoginPage(IWebDriver webDriver) 
+        public LoginPage(IContext context) 
         {
-            this.webControlFinder = new WebControlFinder(webDriver);
+            this.controlFinder = context.ControlFinder;
         }
 
         public void Login(string username, string password)
         {
-            var usernameTextbox = webControlFinder.FindTextInput("username");
+            var usernameTextbox = controlFinder.FindTextInput("username");
             usernameTextbox.InsertText(username);
 
-            var passwordTextbox = webControlFinder.FindTextInput("password");
+            var passwordTextbox = controlFinder.FindTextInput("password");
             passwordTextbox.InsertText(password);
 
-            var loginButton = webControlFinder.FindButton("login");
+            var loginButton = controlFinder.FindButton("login");
             loginButton.Click();
         }
 
         public string GetUserInfo()
         {
-            var userInfoParagraph = webControlFinder.FindParagraph("div.woocommerce-MyAccount-content>p:first-of-type");
+            var userInfoParagraph = controlFinder.FindParagraph("div.woocommerce-MyAccount-content>p:first-of-type");
             return userInfoParagraph.Text;
         }
 
         public void DismissLink()
         {
-            var dismissLink = webControlFinder.FindLink("woocommerce-store-notice__dismiss-link");
+            var dismissLink = controlFinder.FindLink("woocommerce-store-notice__dismiss-link");
             dismissLink.Click();
         }
 
         public string GetLoginErrorMessage()
         {
-            var list = webControlFinder.FindUnorderedList("ul.woocommerce-error");
+            var list = controlFinder.FindUnorderedList("ul.woocommerce-error");
 
             return list.Items.First().Text;
         }
