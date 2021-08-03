@@ -6,7 +6,7 @@ The application allows you to write automated tests for any website. It contains
 :gem: Technologies used and concepts covered
 
 * C#
-* Selenium WebDriver: https://www.selenium.dev/documentation/en/
+* Selenium WebDriver: https://www.selenium.dev/documentation/en/webdriver/
 * NUnit (Assertions)
 
 :gem: How to get started
