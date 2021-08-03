@@ -1,5 +1,4 @@
-﻿using TestAutomationLibrary;
-using TestAutomationLibrary.Selenium;
+﻿using TestAutomationLibrary.Selenium;
 using TestAutomationLibrary.Pages.FakeStore;
 
 using NUnit.Framework;
