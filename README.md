@@ -8,6 +8,7 @@ The application allows you to write automated tests for any website. It contains
 * C#
 * Selenium WebDriver: https://www.selenium.dev/documentation/en/webdriver/
 * NUnit: https://docs.nunit.org/
+* Page Object Model
 
 :gem: How to get started
 
