@@ -6,16 +6,31 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
 {
     public class UrlNavigator : IUrlNavigator
     {
-        private readonly IWebDriver webDriver;
+        private readonly INavigation navigation;
 
         public UrlNavigator(IWebDriver webDriver)
         {
-            this.webDriver = webDriver;
+            this.navigation = webDriver.Navigate();
         }
 
         public void GoToUrl(string url)
         {
-            webDriver.Navigate().GoToUrl(url);
+            navigation.GoToUrl(url);
+        }
+
+        public void GoForward()
+        {
+            navigation.Forward();
+        }
+
+        public void GoBack()
+        {
+            navigation.Back();
+        }
+
+        public void Refresh()
+        {
+            navigation.Refresh();
         }
     }
 }

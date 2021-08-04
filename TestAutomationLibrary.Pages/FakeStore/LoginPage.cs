@@ -1,16 +1,11 @@
 ﻿using System.Linq;
 
-using TestAutomationLibrary.ContextFeatures;
-
 namespace TestAutomationLibrary.Pages.FakeStore
 {
-    public class LoginPage
+    public class LoginPage : Page
     {
-        private readonly IControlFinder controlFinder;
-
-        public LoginPage(IContext context) 
+        public LoginPage(IContext context) : base (context) 
         {
-            this.controlFinder = context.ControlFinder;
         }
 
         public void Login(string username, string password)
