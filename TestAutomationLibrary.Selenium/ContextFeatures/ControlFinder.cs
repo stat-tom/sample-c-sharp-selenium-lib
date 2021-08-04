@@ -3,23 +3,27 @@
 using TestAutomationLibrary.Controls;
 using TestAutomationLibrary.ContextFeatures;
 using TestAutomationLibrary.Selenium.Controls;
+using System;
 
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace TestAutomationLibrary.Selenium.ContextFeatures
 {
     public class ControlFinder : IControlFinder
     {
         private readonly IWebDriver webDriver;
+        private readonly WebDriverWait wait;
 
         public ControlFinder(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
+            this.wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
         }
 
         public IButton FindButton(string name)
         {
-            var webElement = webDriver.FindElement(By.Name(name));
+            var webElement = wait.Until(driver => webDriver.FindElement(By.Name(name)));
             //to do check if it is text input; throw exception if null
 
             return new Button(webElement);
@@ -51,7 +55,7 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
 
         public IUnorderedList FindUnorderedList(string cssSelector)
         {
-            var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
+            var webElement = wait.Until(driver => webDriver.FindElement(By.CssSelector(cssSelector)));
             //to do check if it is text input; throw exception if null
 
             var items = webElement.FindElements(By.TagName("li"));
@@ -62,6 +66,12 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
                 unorderedList.Items.Add(listItem);
             }
             return unorderedList;
+        }
+
+        public ControlFinder WaitForElement(string element)
+        {
+            var webElement = wait.Until(driver => webDriver.FindElement(By.CssSelector(element)));
+            return this;
         }
     }
 }

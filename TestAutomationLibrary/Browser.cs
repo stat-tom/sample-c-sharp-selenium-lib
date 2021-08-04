@@ -6,8 +6,6 @@ namespace TestAutomationLibrary
     {
         private readonly IUrlNavigator urlNavigator;
 
-        private readonly IWaiting waiting;
-
         public Browser(IContext context)
         {
             this.urlNavigator = context.UrlNavigator;
@@ -31,16 +29,6 @@ namespace TestAutomationLibrary
         public void Refresh()
         {
             this.urlNavigator.Refresh();
-        }
-
-        public void WaitForPageLoad(int seconds)
-        {
-            this.waiting.WaitForPageLoad(seconds);
-        }
-
-        public void ImplicitWait(int seconds)
-        {
-            this.waiting.ImplicitWait(seconds);
         }
     }
 }

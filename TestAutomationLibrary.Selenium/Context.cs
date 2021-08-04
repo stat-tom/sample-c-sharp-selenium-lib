@@ -11,8 +11,6 @@ namespace TestAutomationLibrary.Selenium
 
         private readonly IUrlNavigator urlNavigator;
 
-        private readonly IWaiting waiting;
-
         private readonly IWebDriver webDriver;
 
         public Context(IWebDriver webDriver)
@@ -25,8 +23,6 @@ namespace TestAutomationLibrary.Selenium
         public IControlFinder ControlFinder => controlFinder;
 
         public IUrlNavigator UrlNavigator => urlNavigator;
-
-        public IWaiting Waiting => waiting;
 
         public void Quit()
         {

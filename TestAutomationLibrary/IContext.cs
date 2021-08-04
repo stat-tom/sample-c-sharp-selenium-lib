@@ -6,7 +6,6 @@ namespace TestAutomationLibrary
     {
         IControlFinder ControlFinder { get; }
         IUrlNavigator UrlNavigator { get; }
-        IWaiting Waiting { get; }
 
         void Quit();
     }

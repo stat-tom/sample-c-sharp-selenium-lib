@@ -32,7 +32,6 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void SuccessfulLogin()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
-            browser.WaitForPageLoad(10);
             loginPage.DismissLink();
             loginPage.Login("siwec27155", "Abcde1234!@#$");
             
@@ -46,7 +45,6 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void FailedLoginNoUsername()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
-            browser.WaitForPageLoad(10);
             loginPage.DismissLink();
             loginPage.Login("", "Abcde1234!@#$");
 
@@ -60,7 +58,6 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void FailedLoginNoPassword()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
-            browser.WaitForPageLoad(10);
             loginPage.DismissLink();
 
             loginPage.Login("siwec27155", "");
@@ -75,7 +72,6 @@ namespace TestAutomationLibrary.Tests.FakeStore
         public void FailedLoginNoUsernameAndPassword()
         {
             browser.GoToUrl("https://fakestore.testelka.pl/moje-konto/");
-            browser.WaitForPageLoad(10);
             loginPage.DismissLink();
 
             loginPage.Login("", "");
