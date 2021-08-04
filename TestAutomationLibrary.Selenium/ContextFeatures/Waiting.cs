@@ -19,5 +19,10 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
         {
             webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(seconds);
         }
+
+        public void ImplicitWait(int seconds)
+        {
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
+        }
     }
 }

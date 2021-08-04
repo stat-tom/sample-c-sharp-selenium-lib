@@ -37,5 +37,10 @@ namespace TestAutomationLibrary
         {
             this.waiting.WaitForPageLoad(seconds);
         }
+
+        public void ImplicitWait(int seconds)
+        {
+            this.waiting.ImplicitWait(seconds);
+        }
     }
 }
