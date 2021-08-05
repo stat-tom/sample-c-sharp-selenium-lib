@@ -1,9 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using TestAutomationLibrary.Controls;
 using TestAutomationLibrary.ContextFeatures;
 using TestAutomationLibrary.Selenium.Controls;
-using System;
 
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -31,7 +31,7 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
 
         public ILink FindLink(string name)
         {
-            var webElement = webDriver.FindElement(By.ClassName(name));
+            var webElement = wait.Until(driver => webDriver.FindElement(By.ClassName(name)));
             //to do check if it is text input; throw exception if null
 
             return new Link(webElement);
@@ -39,7 +39,7 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
 
         public IParagraph FindParagraph(string cssSelector)
         {
-            var webElement = webDriver.FindElement(By.CssSelector(cssSelector));
+            var webElement = wait.Until(driver => webDriver.FindElement(By.CssSelector(cssSelector)));
             //to do check if it is text input; throw exception if null
 
             return new Paragraph(webElement);
@@ -47,7 +47,7 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
 
         public ITextField FindTextInput(string id)
         {
-            var webElement = webDriver.FindElement(By.Id(id));
+            var webElement = wait.Until(driver => webDriver.FindElement(By.Id(id)));
             //to do check if it is text input; throw exception if null
 
             return new TextField(webElement);
@@ -68,10 +68,5 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
             return unorderedList;
         }
 
-        public ControlFinder WaitForElement(string element)
-        {
-            var webElement = wait.Until(driver => webDriver.FindElement(By.CssSelector(element)));
-            return this;
-        }
     }
 }
