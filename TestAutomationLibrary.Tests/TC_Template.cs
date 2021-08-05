@@ -7,6 +7,7 @@ namespace TestAutomationLibrary.Tests.FakeStore
     [TestFixture]
     public class TC_Template
     {
+        //Arrange
         private IContext context;
         private Browser browser;
 
@@ -27,6 +28,11 @@ namespace TestAutomationLibrary.Tests.FakeStore
         [Test]
         public void Test_Template()
         {
+            //Act
+
+
+            //Assert
+
 
         }
     }

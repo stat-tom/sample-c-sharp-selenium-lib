@@ -24,6 +24,7 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
         public IButton FindButton(string name)
         {
             var webElement = wait.Until(driver => webDriver.FindElement(By.Name(name)));
+            //to do add option for other selectors, eg. Id, CssSelector, ClassName
             //to do check if it is text input; throw exception if null
 
             return new Button(webElement);
