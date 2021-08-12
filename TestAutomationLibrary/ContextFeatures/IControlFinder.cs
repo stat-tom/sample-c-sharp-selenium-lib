@@ -10,10 +10,10 @@ namespace TestAutomationLibrary.ContextFeatures
         IButton FindButton(By by);
         IButton FindButtonWithWait(By by);
 
-        IParagraph FindParagraph(string arg);
+        IParagraph FindParagraph(By by);
 
-        ILink FindLink(string arg);
+        ILink FindLink(By by);
 
-        IUnorderedList FindUnorderedList(string arg);
+        IUnorderedList FindUnorderedList(By by);
     }
 }

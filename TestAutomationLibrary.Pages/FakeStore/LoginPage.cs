@@ -22,19 +22,19 @@ namespace TestAutomationLibrary.Pages.FakeStore
 
         public string GetUserInfo()
         {
-            var userInfoParagraph = controlFinder.FindParagraph("div.woocommerce-MyAccount-content>p:first-of-type");
+            var userInfoParagraph = controlFinder.FindParagraph(By.CssSelector("div.woocommerce-MyAccount-content>p:first-of-type"));
             return userInfoParagraph.Text;
         }
 
         public void DismissLink()
         {
-            var dismissLink = controlFinder.FindLink("woocommerce-store-notice__dismiss-link");
+            var dismissLink = controlFinder.FindLink(By.ClassName("woocommerce-store-notice__dismiss-link"));
             dismissLink.Click();
         }
 
         public string GetLoginErrorMessage()
         {
-            var list = controlFinder.FindUnorderedList("ul.woocommerce-error");
+            var list = controlFinder.FindUnorderedList(By.CssSelector("ul.woocommerce-error"));
 
             return list.Items.First().Text;
         }

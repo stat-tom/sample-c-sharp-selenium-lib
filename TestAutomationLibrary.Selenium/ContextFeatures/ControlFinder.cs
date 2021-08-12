@@ -72,27 +72,21 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
             return new TextField(webElement);
         }
 
-        public ILink FindLink(string name)
+        public ILink FindLink(By by)
         {
-            var webElement = wait.Until(driver => webDriver.FindElement(OpenQA.Selenium.By.ClassName(name)));
-            //to do check if it is text input; throw exception if null
-
+            var webElement = FindControl(by);
             return new Link(webElement);
         }
 
-        public IParagraph FindParagraph(string cssSelector)
+        public IParagraph FindParagraph(By by)
         {
-            var webElement = wait.Until(driver => webDriver.FindElement(OpenQA.Selenium.By.CssSelector(cssSelector)));
-            //to do check if it is text input; throw exception if null
-
+            var webElement = FindControl(by);
             return new Paragraph(webElement);
         }
 
-        public IUnorderedList FindUnorderedList(string cssSelector)
+        public IUnorderedList FindUnorderedList(By by)
         {
-            var webElement = wait.Until(driver => webDriver.FindElement(OpenQA.Selenium.By.CssSelector(cssSelector)));
-            //to do check if it is text input; throw exception if null
-
+            var webElement = FindControl(by);
             var items = webElement.FindElements(OpenQA.Selenium.By.TagName("li"));
             var unorderedList = new UnorderedList(webElement);
             var listItems = items.Select(item => new ListItem(item)).ToList();
