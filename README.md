@@ -3,6 +3,8 @@
 :dart: Welcome to Test Automation Library!
 The application allows you to write automated tests for any website. It contains exemplary test cases. All you need to start testing is your page url and web elements' locators.
 
+:exclamation::exclamation: IMPORTANT: Project updates moved to Azure DevOps: https://dev.azure.com/stattom/_git/TestAutomationLibrary :exclamation::exclamation:
+
 :gem: Technologies used and concepts covered
 
 * C#
