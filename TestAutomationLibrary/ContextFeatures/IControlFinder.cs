@@ -4,9 +4,11 @@ namespace TestAutomationLibrary.ContextFeatures
 {
     public interface IControlFinder
     {
-        ITextField FindTextInput(string arg);
+        ITextField FindTextField(By by);
+        ITextField FindTextFieldWithWait(By by);
 
-        IButton FindButton(string arg);
+        IButton FindButton(By by);
+        IButton FindButtonWithWait(By by);
 
         IParagraph FindParagraph(string arg);
 

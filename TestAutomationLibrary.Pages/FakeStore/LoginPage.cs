@@ -10,13 +10,13 @@ namespace TestAutomationLibrary.Pages.FakeStore
 
         public void Login(string username, string password)
         {
-            var usernameTextbox = controlFinder.FindTextInput("username");
+            var usernameTextbox = controlFinder.FindTextFieldWithWait(By.Id("username"));
             usernameTextbox.InsertText(username);
 
-            var passwordTextbox = controlFinder.FindTextInput("password");
+            var passwordTextbox = controlFinder.FindTextFieldWithWait(By.Id("password"));
             passwordTextbox.InsertText(password);
 
-            var loginButton = controlFinder.FindButton("login");
+            var loginButton = controlFinder.FindButton(By.Name("login"));
             loginButton.Click();
         }
 

@@ -8,16 +8,16 @@ namespace TestAutomationLibrary.Pages.FakeStore
         {
         }
 
-        public void AddToCart()
-        {
-            var addToCartButton = controlFinder.FindButton("[name='add-to-cart']");
-            addToCartButton.Click();
-        }
+        //public void AddToCart()
+        //{
+        //    var addToCartButton = controlFinder.FindButton("[name='add-to-cart']");
+        //    addToCartButton.Click();
+        //}
 
-        public void GoToCart()
-        {
-            var goToCartButton = controlFinder.FindButton(".woocommerce-message .wc-forward");
-            goToCartButton.Click();
-        }
+        //public void GoToCart()
+        //{
+        //    var goToCartButton = controlFinder.FindButton(".woocommerce-message .wc-forward");
+        //    goToCartButton.Click();
+        //}
     }
 }
