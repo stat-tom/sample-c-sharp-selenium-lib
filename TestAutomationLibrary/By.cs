@@ -7,7 +7,7 @@ namespace TestAutomationLibrary
         Name = 1,
         ClassName = 2,
         Id = 3,
-        CSSSelector = 4
+        CssSelector = 4
     }
 
     public abstract class By
@@ -28,6 +28,11 @@ namespace TestAutomationLibrary
         public static By Id(string id)
         {
             return new ById(id);
+        }
+
+        public static By CssSelector(string cssSelector)
+        {
+            return new ByCssSelector(cssSelector);
         }
     }
 }

@@ -25,6 +25,11 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
                 var id = ((ById)by).IdValue;
                 return OpenQA.Selenium.By.Id(id);
             }
+            else if (by.Type == ByType.CssSelector)
+            {
+                var cssSelector = ((ByCssSelector)by).CssSelectorValue;
+                return OpenQA.Selenium.By.CssSelector(cssSelector);
+            }
             else
             {
                 throw new System.Exception("Missing if condition in ByFactory.");
