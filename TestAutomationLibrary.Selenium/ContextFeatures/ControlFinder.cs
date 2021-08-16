@@ -35,7 +35,7 @@ namespace TestAutomationLibrary.Selenium.ContextFeatures
             var control = InternalFindControl(funcFindControl, byS);
             if(control == null)
             {
-                throw new Exception("Web element not found.");
+                throw new Exception("Control not found.");
             }
             return control;
         }
